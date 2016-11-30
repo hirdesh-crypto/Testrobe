@@ -1,66 +1,175 @@
-* {
+*{
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+body{
+    text-align: center;
+    margin: 0 auto;
+}
+.header {
+    border-bottom: 1px solid #ccc;
     font-family: 'Open Sans', sans-serif;
 }
+.nav{
+    position: fixed;
+    background: #fff;
+    width: 100vw;
+    z-index: 10;
+    box-sizing: border-box;
+    border-bottom: 1px solid #fafafa;
+}
+
+.logo h1 {
+    font-size: 24px;
+    text-align: center;
+    font-weight: 600;
+}
+
+ul li.icon {
+    display: none;
+    font-weight: 500;
+}
+
 .nav a {
-  color: #5a5a5a;
-  font-size: 11px;
-  font-weight: bold;
-  padding: 14px 10px;
-  text-transform: uppercase;
+    color: #5a5a5a;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 6px 10px;
+    text-transform: uppercase;
     text-decoration: none;
+    font-weight: 400;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.nav .container {
+    text-align: center;
+    position: relative;
+    display: inline-block;
 }
 
 .nav li {
-  display: inline;
+    display: inline;
+}
+.dropdown_men, .dropdown_women {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    width: 100vw;
+    z-index: 10;
+    border-bottom: 1px solid #000;
+}
+.dropdown_men a, .dropdown_women a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown:nth-child(3n):hover .dropdown_men {
+    display: block;
+}
+.dropdown:nth-child(2n):hover .dropdown_women {
+    display: block;
+}
+/*#women_pic{
+    background: url(/assets/women.jpg);
+}
+#men_pic{
+    background: url(/assets/men.jpg);
+}*/
+.card{
+    position: relative;
+    max-width: 100vw;
+}
+.card-img-overlay{
+    position: absolute;
+    top: 45%;
+    left: 36%;
+    color: #000;
+    background: #fff;
+    padding: 60px 70px 20px 70px;
+    opacity: 0.95;
 }
 
 .jumbotron {
-  background-image:url('http://www.walldevil.com/wallpapers/w07/alexandra-daddario-actors-women-brunettes-dresses-legs.jpg');
-  height: 500px;
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-image: url('http://www.walldevil.com/wallpapers/w07/alexandra-daddario-actors-women-brunettes-dresses-legs.jpg');
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .jumbotron .container {
-  position: relative;
-  top:100px;
+    position: relative;
+    top: 100px;
+    text-align: center;
 }
 
 .jumbotron h1 {
-  color: #fff;
-  font-size: 48px;  
-  font-family: 'Shift', sans-serif;
-  font-weight: bold;
-  font-family: 'Playfair Display', serif;
+    color: #fff;
+    font-size: 48px;
+    font-family: 'Shift', sans-serif;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
 }
 
 .jumbotron p {
-  font-size: 20px;
-  color: #fff;
+    font-size: 20px;
+    color: #fff;
 }
 
 .learn-more {
-  background-color: #f7f7f7;
+    background-color: #f7f7f7;
 }
 
 .learn-more h3 {
-  font-family: 'Shift', sans-serif;
-  font-size: 18px;
-  font-weight: bold;
+    font-family: 'Shift', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .learn-more a {
-  color: #00b0ff;
+    color: #00b0ff;
 }
+
 .neighborhood-guides {
     background-color: #efefef;
     border-bottom: 1px solid #dbdbdb;
 }
+
 .neighborhood-guides h2 {
     color: #393c3d;
     font-size: 24px;
 }
+
 .neighborhood-guides p {
     margin-bottom: 13px;
     font-size: 15px;
+}
+
+@media screen and (max-width:680px) {
+    ul.topnav li {
+        display: none;
+    }
+    ul.topnav li.icon {
+        float: left;
+        display: inline-block;
+    }
+    ul.topnav.responsive {
+        position: relative;
+    }
+    ul.topnav.responsive li.icon {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    ul.topnav.responsive li {
+        float: none;
+        display: block;
+    }
+    ul.topnav.responsive li a {
+        display: block;
+        text-align: left;
+    }
 }
