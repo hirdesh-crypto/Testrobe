@@ -132,6 +132,11 @@ ul {
     text-align: left;
 }
 
+.inspiration .card-img-overlay {
+    max-width: 60%;
+    top: -36%;
+    left: 18%;
+}
 
 /*#women_pic{
     background: url(/assets/women.jpg);
@@ -247,4 +252,9 @@ ul {
         top: -35%;
         padding: 33px 45px 6px 45px
     }
+    .inspiration .card-img-overlay {
+    max-width: 100%;
+    top: -95%;
+    left: 0%;
+}
 }

@@ -135,7 +135,7 @@
         <p class="coll_head">COLLECTIONS</p>
     </div>
     <div class="container" id="collection"> </div>
-       <div class="container">
+    <div class="container">
         <p class="coll_head">INSPIRATIONS</p>
     </div>
     <div class="container" id="inspiration"> </div>
@@ -206,13 +206,18 @@
                 }
             })
             y.forEach(function (item, index) {
-                console.log(item.title.text);
-                div2 += '<a href="//flyrobe.com' + item.redirect_url + '"><img src="' + item.background_image + '" class="' + classes2[index] + '"></a>';
-                if (index == 1) {
-                    div2 += '<p class="'+item.title.classes+'">'+ item.title.text +'</p> </div> <br>';
-                }
-            })
+                    console.log(item.title.text);
+                    div2 += '<a class="inspiration" href="'+ item.redirect_url +'"><div class="' + classes2[index] + '"><article class="card card-inverse animated fadeInLeft"><img class="img-responsive" src="' + item.background_image + '"><div class="card-img-overlay" style="background: none; color: #fff;"><p class="'+ item.title.classes +'"> '+ item.title.text +' </p><h3 class="'+ item.header.classes +'">'+ item.header.text +'</h3> <div class="'+ item.sub_header.classes +'">'+ item.sub_header.text +'</div></div></article></div></div></a>'
 
+                })
+                /*<div class="col-md-6">
+                    <article class="card card-inverse animated fadeInLeft"> <img class="img-responsive" src="/assets/women.jpg" />
+                        <div class="card-img-overlay">
+                            <h4 class="card-title">women</h4>
+                            <h6 class="text-muted">RENT NOW</h6> </div>
+                    </article>
+                </div>
+                          */
             $("#collection").append(div);
             $("#inspiration").append(div2);
         }
