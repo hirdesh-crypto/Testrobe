@@ -135,6 +135,10 @@
         <p class="coll_head">COLLECTIONS</p>
     </div>
     <div class="container" id="collection"> </div>
+       <div class="container">
+        <p class="coll_head">INSPIRATIONS</p>
+    </div>
+    <div class="container" id="inspiration"> </div>
     <div class="footer">
         <div class="container-fluid" style="height: 40px; padding: 10px; margin-top: 20px;">Copyright &copy; 2016 flyrobe.com. All Rights Reserved</div>
         <br>
@@ -152,6 +156,10 @@
         , "col-md-8 col-xs-12"
         , "col-md-4 col-xs-12"
         , "col-md-4 col-xs-12"
+        , "col-md-4 col-xs-12"
+    ]
+    var classes2 = [
+        "col-md-8 col-xs-12"
         , "col-md-4 col-xs-12"
     ]
 
@@ -183,8 +191,11 @@
             //console.log(result);
             var res = JSON.parse(result);
             var x = res.data.collections;
+            var y = res.data.inspirations;
             console.log(x);
+            console.log(y);
             var div = '<div class="row">'
+            var div2 = '<div class="row">'
             x.forEach(function (item, index) {
                 div += '<a href="//flyrobe.com' + item.redirect_url + '"><img src="' + item.background_image + '" class="' + classes[index] + '"></a>';
                 if (index == 1 || index == 3) {
@@ -194,7 +205,16 @@
                     div += '</div>'
                 }
             })
+            y.forEach(function (item, index) {
+                console.log(item.title.text);
+                div2 += '<a href="//flyrobe.com' + item.redirect_url + '"><img src="' + item.background_image + '" class="' + classes2[index] + '"></a>';
+                if (index == 1) {
+                    div2 += '<p class="'+item.title.classes+'">'+ item.title.text +'</p> </div> <br>';
+                }
+            })
+
             $("#collection").append(div);
+            $("#inspiration").append(div2);
         }
     });
 </script>
